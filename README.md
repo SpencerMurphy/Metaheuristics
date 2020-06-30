@@ -1,26 +1,36 @@
-# Metaheuristics
-Metaheuristic Analysis Projects
-Metaheuristics Final Assignment
-Spencer Murphy, Spring 2020 Cohort
+# Metaheuristics Final Assignment
+## Metaheuristic Analysis Projects
+### Spencer Murphy, Spring 2020 Cohort
 
 To-Do: make this pretty :)
 
-Exercise 2
+## Exercise 2
 
-The Banana (Rosenbrock) Function: (x, y) bounded at [-5, 5], global minimum at (1, 1) where f(x, y) = 0
+### The Banana (Rosenbrock) Function: (x, y) bounded at [-5, 5], global minimum at (1, 1) where f(x, y) = 0
 Conjugate Gradient Search
 
-Run	Starting Vector	Solution Vector	Cost at Solution	Compute Time (s)
+Run	Starting Vector	                Solution Vector	                Cost at Solution	Compute Time (s)
+
 1	[-0.08263047 -1.30948915]	[1.00000004, 1.00000231]	5.125386208250442e-12	0.00400090217590332
+
 2	[4.83769742 4.82732319]	[1., 1.]	2.0925860881440125e-19	0.0029993057250976562
+
 3	[ 0.2614314  -3.82967276]	[0.99999999, 0.99999971]	8.068292125466617e-14	0.0019991397857666016
+
 4	[ 2.55141091 -2.10015311]	[0.99999992, 0.99999595]	1.5801463614247838e-11	0.003999948501586914
+
 5	[-4.14511527 -4.19901386]	[1.00000007, 1.00000244]	5.757298231076208e-12	0.0029997825622558594
+
 6	[-0.68575675 -1.84208405]	[1.00000008, 1.00000324]	1.0117700849518433e-11	0.0029997825622558594
+
 7	[3.52908335 4.95113165]	[1.00000004, 1.00000204]	3.988693086738672e-12	0.002000570297241211
+
 8	[-2.21297189 -2.67040145]	[1.00000001, 1.00000149]	2.155948133122679e-12	0.0030002593994140625
+
 9	[ 2.24702506 -0.60440573]	[1., 1.]	4.547612546287085e-19	0.0020051002502441406
+
 10	[-4.83248509  0.17551767]	[0.99999997, 0.99999834]	2.6596680359172107e-12	0.003000020980834961
+
 minimize(banana, x0_rosen, method="CG", jac=banana_jac)
 
 For the Rosenbrock function, a conjugate gradient method approach works well. While none of the solutions converge exactly to the minimum (conjugate gradient never will), it consistently points almost exactly to the minimum (0,0) and in less around 0.003 seconds run time. Since the randomized start point is already within the bounds, the shape of the banana function means we won’t have any solutions outside the parameters (which is confirmed by banana_checker() ). Parameters can be included in scipy.optimize.minimize but we can work without them in this example. With a bit of intuition from the person conducting the analysis (since we should never say a project is “fully automated” anyway!) we can easily see that the global minimum is at (0,0).
@@ -28,17 +38,28 @@ For the Rosenbrock function, a conjugate gradient method approach works well. Wh
 The Eggcrate Function: (x, y) bounded at [-2π, 2π], global minimum (0, 0) where f(x, y)=0
 Newton-CG Search
 
-Run	Starting Vector	Solution Vector	Cost at Solution	Compute Time (s)
-1	[-5.37241228  3.88493547]	[-6.031424    3.01960188]	47.417669	
-2	[-3.08136202  2.11400536]	[-3.01960188  3.01960188]	18.976395	
-3	[-2.37920097 -0.52144656]	[-3.01960188e+00 -1.53097799e-09]	9.488197	
-4	[ 1.89227844 -1.68340489]	[ 3.01960188 -3.01960188]	18.976395	
-5	[-2.24766572  5.11526079]	[-3.01960185  6.03142398]	47.417669	
-6	[ 3.48754359 -3.37094849]	[ 6.42953416e-09 -9.59621775e-09]	0.000000	
-7	[-4.64052914  0.17779838]	[-3.01960188e+00  3.70363189e-08]	9.488197	
-8	[ 0.47342953 -5.45510737]	[-1.55803114e-08 -6.03142399e+00]	37.929472	
-9	[-0.49598649  1.49076466]	[ 1.42375651e-18 -6.67800776e-18]	0.000000	
-10	[-4.51845265 -1.75767297]	[ 2.73032985e-08 -3.01960186e+00]	9.488197	
+Run	Starting Vector	                 Solution Vector	        Cost at Solution	Compute Time (s)
+
+1	[-5.37241228  3.88493547]	[-6.031424    3.01960188]	47.417669	0.004997730255126953
+
+2	[-3.08136202  2.11400536]	[-3.01960188  3.01960188]	18.976395	0.004000663757324219
+
+3	[-2.37920097 -0.52144656]	[-3.01960188e+00 -1.53097799e-09]	9.488197	0.0030002593994140625
+
+4	[ 1.89227844 -1.68340489]	[ 3.01960188 -3.01960188]	18.976395	0.005000114440917969
+
+5	[-2.24766572  5.11526079]	[-3.01960185  6.03142398]	47.417669	        0.003999233245849609
+
+6	[ 3.48754359 -3.37094849]	[ 6.42953416e-09 -9.59621775e-09]	0.000000	0.00500035285949707
+
+7	[-4.64052914  0.17779838]	[-3.01960188e+00  3.70363189e-08]	9.488197	0.003026247024536133
+
+8	[ 0.47342953 -5.45510737]	[-1.55803114e-08 -6.03142399e+00]	37.929472	0.0019991397857666016
+
+9	[-0.49598649  1.49076466]	[ 1.42375651e-18 -6.67800776e-18]	0.000000	0.00600123405456543
+
+10	[-4.51845265 -1.75767297]	[ 2.73032985e-08 -3.01960186e+00]	9.488197	0.002985715866088867
+
 minimize(Eggcrate, x0_egg, method='Newton-CG', jac=egg_der, hess=egg_hess, options= {'xtol':1e-08, 'disp':True}
 
 In the Eggcrate function we see the main drawback of gradient search functions: getting trapped in local minima. While the search function does sometimes get lucky and find the global minimum of (0, 0) as in runs 6 and 9, we can see from this small sample size that the success rate is around 20% and could be lower. All solutions were feasible but finding the global minimum is based on being fortunate enough to start very close to it. While a 20% success rate would work fine here, it is easy to see that with more parameters and a larger search space the success rate could quickly sink to virtually zero. An approach which allows escape from local minima is needed.
