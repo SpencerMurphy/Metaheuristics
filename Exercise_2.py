@@ -335,7 +335,7 @@ res4 = minimize(Golinski, xSolved, method='Newton-CG', jac=golinski_der,
                 hess=golinski_hess, options={'xtol':1e-08, 'disp':True,'return_all':True})
 sol_search_start = time.time()
 print(res4.x)
-sol_search_start = time.time()
+sol_search_end = time.time()
 print(Golinski(res4.x))
 print(GChecker(res4.x))
 print(sol_search_end - sol_search_start)
