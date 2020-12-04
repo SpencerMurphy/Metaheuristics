@@ -1,10 +1,8 @@
-# Metaheuristics Final Assignment
-## Metaheuristic Analysis Projects
-### Spencer Murphy, Spring 2020 Cohort
+# Metaheuristics for Gradient Searches
+## Spencer Murphy
+
 
 To-Do: make this pretty :)
-
-## Exercise 2
 
 ### The Banana (Rosenbrock) Function: (x, y) bounded at [-5, 5], global minimum at (1, 1) where f(x, y) = 0
 Conjugate Gradient Search
